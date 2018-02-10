@@ -60,3 +60,5 @@ typings/
 # compiled files
 public/bundle.js
 public/bundle.css
+
+maps.config
