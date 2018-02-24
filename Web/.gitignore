@@ -62,3 +62,6 @@ public/bundle.js
 public/bundle.css
 
 maps.config
+maps.yml
+config/setting.js
+config/default.yaml
