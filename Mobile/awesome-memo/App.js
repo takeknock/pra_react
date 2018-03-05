@@ -5,7 +5,29 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <View>
+          <Text>MEMO</Text>
+        </View>
+        <View>
+          <Text>お買い物メモ</Text>
+          <Text>2018/2/28</Text>
+        </View>
+        <View>
+          <Text>お買い物メモ</Text>
+          <Text>2018/2/28</Text>
+        </View>
+        <View>
+          <Text>お買い物メモ</Text>
+          <Text>2018/2/28</Text>
+        </View>
+        <View>
+          <Text>お買い物メモ</Text>
+          <Text>2018/2/28</Text>
+        </View>
+        <View>
+          <Text>お買い物メモ</Text>
+          <Text>2018/2/28</Text>
+        </View>
       </View>
     );
   }
