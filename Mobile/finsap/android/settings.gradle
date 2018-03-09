@@ -1,0 +1,3 @@
+rootProject.name = 'finsap'
+
+include ':app'
