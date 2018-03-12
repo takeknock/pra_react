@@ -16,8 +16,8 @@ if (stats.isSymbolicLink()) {
   metroBundlerRequirePath = 'metro-bundler';
 }
 
-const blacklist = require(metroBundlerRequirePath + '/src/blacklist');
-const babelRegisterOnly = require(metroBundlerRequirePath + '/src/babelRegisterOnly');
+const blacklist = require(`${metroBundlerRequirePath}/src/blacklist`);
+const babelRegisterOnly = require(`${metroBundlerRequirePath}/src/babelRegisterOnly`);
 
 const registeredTransformModulePaths = new Set();
 
@@ -47,9 +47,7 @@ function getNodeModulesForDirectory(rootPath) {
     if (folderName.startsWith('@')) {
       const scopedModuleFolders = fs.readdirSync(folderPath);
       const scopedModules = scopedModuleFolders.reduce((scopedModules, scopedFolderName) => {
-        scopedModules[`${folderName}/${scopedFolderName}`] = maybeResolveSymlink(
-          path.join(folderPath, scopedFolderName)
-        );
+        scopedModules[`${folderName}/${scopedFolderName}`] = maybeResolveSymlink(path.join(folderPath, scopedFolderName));
         return scopedModules;
       }, {});
       return Object.assign({}, modules, scopedModules);
@@ -63,7 +61,7 @@ function maybeResolveSymlink(maybeSymlinkPath) {
   if (fs.lstatSync(maybeSymlinkPath).isSymbolicLink()) {
     const resolved = path.resolve(
       path.dirname(maybeSymlinkPath),
-      fs.readlinkSync(maybeSymlinkPath)
+      fs.readlinkSync(maybeSymlinkPath),
     );
     return resolved;
   }

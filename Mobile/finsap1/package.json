@@ -2,7 +2,8 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "scripts": {
-    "test": "node ./node_modules/jest/bin/jest.js --watchAll"
+    "test": "node ./node_modules/jest/bin/jest.js --watchAll",
+    "eslint": "./node_modules/.bin/eslint.cmd"
   },
   "jest": {
     "preset": "jest-expo"
@@ -20,6 +21,8 @@
     "react-navigation": "^1.0.0-beta.27"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "exp": "^49.2.2",
     "jest-expo": "^25.0.0"
   }
 }

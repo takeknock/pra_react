@@ -11,7 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
-import styles from './config/AppStyles';
+import styles from '../config/AppStyles';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -20,8 +20,7 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
