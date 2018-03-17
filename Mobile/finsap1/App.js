@@ -1,22 +1,22 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import HomeScreen from './screens/HomeScreen';
+import { COLOR, ThemeProvider } from 'react-native-material-ui';
+import InnerApp from './components/InnerApp';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
+const uiTheme = {
+  palette: {
+    primaryColor: COLOR.green500,
   },
-  statusBarUnderlay: {
-    height: 0,
-    backgroundColor: 'rgba(0,0,0,0.2)',
+  toolbar: {
+    container: {
+      height: 50,
+    },
   },
-});
+};
 
 const App = () => (
-  <View style={styles.container}>
-    <HomeScreen />
-  </View>
+  <ThemeProvider uiTheme={uiTheme}>
+    <InnerApp />
+  </ThemeProvider>
 );
 
 export default App;

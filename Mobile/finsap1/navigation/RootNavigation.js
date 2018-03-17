@@ -21,17 +21,6 @@ const RootStackNavigator = StackNavigator(
 );
 
 export default class RootNavigator extends React.Component {
-  componentDidMount() {
-    this._notificationSubscription = this._registerForPushNotifications();
-  }
-
-  componentWillUnmount() {
-    this._notificationSubscription && this._notificationSubscription.remove();
-  }
-
-  render() {
-    return <RootStackNavigator />;
-  }
 
   _registerForPushNotifications() {
     // Send our push token over to our backend so we can receive notifications
@@ -47,4 +36,17 @@ export default class RootNavigator extends React.Component {
   _handleNotification = ({ origin, data }) => {
     console.log(`Push notification ${origin} with data: ${JSON.stringify(data)}`);
   };
+
+  componentDidMount() {
+    this._notificationSubscription = this._registerForPushNotifications();
+  }
+
+  componentWillUnmount() {
+    this._notificationSubscription && this._notificationSubscription.remove();
+  }
+
+  render() {
+    return <RootStackNavigator />;
+  }
+
 }
