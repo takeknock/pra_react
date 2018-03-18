@@ -1,2 +1,5 @@
 *node_modules
 *.ttf
+bundle.js
+bundle.css
+
